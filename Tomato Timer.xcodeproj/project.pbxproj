@@ -10,9 +10,9 @@
 		E46D55C02969867A009C3F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D55BF2969867A009C3F19 /* AppDelegate.swift */; };
 		E46D55C22969867A009C3F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D55C12969867A009C3F19 /* SceneDelegate.swift */; };
 		E46D55C42969867A009C3F19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D55C32969867A009C3F19 /* ViewController.swift */; };
-		E46D55C72969867A009C3F19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46D55C52969867A009C3F19 /* Main.storyboard */; };
 		E46D55C929698682009C3F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46D55C829698682009C3F19 /* Assets.xcassets */; };
 		E46D55CC29698682009C3F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46D55CA29698682009C3F19 /* LaunchScreen.storyboard */; };
+		E46D55D829698AAA009C3F19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E46D55D729698AAA009C3F19 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,6 @@
 		E46D55BF2969867A009C3F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E46D55C12969867A009C3F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E46D55C32969867A009C3F19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E46D55C62969867A009C3F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E46D55C829698682009C3F19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46D55CB29698682009C3F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E46D55CD29698682009C3F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46D55D829698AAA009C3F19 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +56,38 @@
 		E46D55BE2969867A009C3F19 /* Tomato Timer */ = {
 			isa = PBXGroup;
 			children = (
-				E46D55BF2969867A009C3F19 /* AppDelegate.swift */,
-				E46D55C12969867A009C3F19 /* SceneDelegate.swift */,
-				E46D55C32969867A009C3F19 /* ViewController.swift */,
-				E46D55C52969867A009C3F19 /* Main.storyboard */,
+				E46D55D429698863009C3F19 /* Sourses */,
+				E46D55D32969885A009C3F19 /* Resources */,
+			);
+			path = "Tomato Timer";
+			sourceTree = "<group>";
+		};
+		E46D55D32969885A009C3F19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				E46D55C829698682009C3F19 /* Assets.xcassets */,
 				E46D55CA29698682009C3F19 /* LaunchScreen.storyboard */,
 				E46D55CD29698682009C3F19 /* Info.plist */,
 			);
-			path = "Tomato Timer";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E46D55D429698863009C3F19 /* Sourses */ = {
+			isa = PBXGroup;
+			children = (
+				E46D55D529698882009C3F19 /* App */,
+				E46D55C32969867A009C3F19 /* ViewController.swift */,
+			);
+			path = Sourses;
+			sourceTree = "<group>";
+		};
+		E46D55D529698882009C3F19 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E46D55BF2969867A009C3F19 /* AppDelegate.swift */,
+				E46D55C12969867A009C3F19 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +106,9 @@
 			dependencies = (
 			);
 			name = "Tomato Timer";
+			packageProductDependencies = (
+				E46D55D729698AAA009C3F19 /* SnapKit */,
+			);
 			productName = "Tomato Timer";
 			productReference = E46D55BC2969867A009C3F19 /* Tomato Timer.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +137,9 @@
 				Base,
 			);
 			mainGroup = E46D55B32969867A009C3F19;
+			packageReferences = (
+				E46D55D629698AAA009C3F19 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E46D55BD2969867A009C3F19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +156,6 @@
 			files = (
 				E46D55CC29698682009C3F19 /* LaunchScreen.storyboard in Resources */,
 				E46D55C929698682009C3F19 /* Assets.xcassets in Resources */,
-				E46D55C72969867A009C3F19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E46D55C52969867A009C3F19 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E46D55C62969867A009C3F19 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E46D55CA29698682009C3F19 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,10 +308,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Tomato Timer/Info.plist";
+				INFOPLIST_FILE = "Tomato Timer/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,10 +334,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Tomato Timer/Info.plist";
+				INFOPLIST_FILE = "Tomato Timer/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -356,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E46D55D629698AAA009C3F19 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E46D55D729698AAA009C3F19 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E46D55D629698AAA009C3F19 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E46D55B42969867A009C3F19 /* Project object */;
 }
