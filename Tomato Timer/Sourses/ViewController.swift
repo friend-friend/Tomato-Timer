@@ -20,8 +20,10 @@ class ViewController: UIViewController {
 
     // MARK: - UI Elements
 
-    private var isWorkTime = false
+    private var isWorkTime = true
     private var isStarted = false
+    private var timer = Timer()
+    private var duration = 2500
 
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "background"))
@@ -31,9 +33,9 @@ class ViewController: UIViewController {
 
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "25:00"
+        label.text = "00:25"
         label.sizeToFit()
-        label.textColor = UIColor(hex: "#141991")
+        label.textColor = UIColor(hex: "#030645")
         label.font = UIFont.systemFont(ofSize: 38, weight: UIFont.Weight.bold)
         return label
     }()
@@ -41,7 +43,8 @@ class ViewController: UIViewController {
     private lazy var button: UIButton = {
         let button = UIButton(type: .system)
         button.setBackgroundImage(UIImage(systemName: "play"), for: UIControl.State.normal)
-        button.tintColor = UIColor(hex: "#141991")
+        button.tintColor = UIColor(hex: "#030645")
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
 
@@ -92,5 +95,45 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc private func buttonPressed() {
+
+        if !isStarted {
+            isStarted = true
+            button.setBackgroundImage(UIImage(systemName: "pause"), for: UIControl.State.normal)
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(startAnimation), userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            button.setBackgroundImage(UIImage(systemName: "play"), for: UIControl.State.normal)
+            isStarted = false
+        }
+    }
+
+    // MARK: - Animation
+
+    @objc private func startAnimation() {
+        if isWorkTime {
+            duration -= 1
+            label.text = formatTime(duration)
+        } else {
+            duration -= 1
+            label.text = formatTime(duration)
+            if duration == 0 {
+                duration = 2500
+                isWorkTime = true
+            }
+        }
+    if duration == 0 {
+        duration = 1000
+        isWorkTime = false
+    }
+}
+
+    func formatTime(_ time: Int) -> String {
+        let newTime = (time + 100) / 100
+        let minutes = (newTime / 60) % 60
+        let hours = (newTime % 60)
+        return String(format: "%02d:%02d", minutes, hours)
+    }
 }
 
